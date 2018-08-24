@@ -4,9 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * @author wj
  * @create 2018-08-21 13:35
@@ -17,12 +14,10 @@ import java.util.Map;
 public class HelloWorld {
 
     @RequestMapping("/")
-    public Map<String, Object> index() {
+    public String index() {
         log.error("error");
         log.info("info");
-        Map<String, Object> map = new HashMap<>();
-        map.put("name", "wangjie");
-        map.put("age", 18);
-        return map;
+        log.debug("debug");
+        return "Hello World!";
     }
 }

@@ -19,7 +19,7 @@ import java.io.Serializable;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class User implements Serializable {
+public class User {
     @Id
     @GeneratedValue
     private Long id;

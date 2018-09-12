@@ -1,16 +1,23 @@
 server:
-  port: 8080
+  port: 8000
 
 spring:
   datasource:
-    url: jdbc:mysql://192.168.211.180:3306/pms
+    url: jdbc:mysql://192.168.99.100:3306/pms
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: create-drop
+    open-in-view: false
 
 logging:
   file: pms.log
   path: /app/log
+
+context:
+  listener:
+    classes: com.wj5633.pms.event.MyApplicationListener
+  initializer:
+    classes: com.wj5633.pms.initializer.MyApplicationContextInitializer

@@ -1,5 +1,6 @@
 package com.wj5633.pms.exception;
 
+import com.wj5633.pms.wrapper.response.WebApiResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,10 +18,18 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(value = Exception.class)
     @ResponseBody
-    public Map<String, String> errorHandler(Exception e) {
-        Map<String, String> map = new HashMap<>();
-        map.put("error", "Global error" + e.getClass().getName());
+    public WebApiResponse errorHandler(Exception ex) {
+        return WebApiResponse.error(ex.getMessage());
+    }
 
-        return map;
+    /**
+     * 拦截捕捉自定义异常 MyException.class
+     * @param ex
+     * @return
+     */
+    @ResponseBody
+    @ExceptionHandler(value = MyException.class)
+    public WebApiResponse myErrorHandler(MyException ex) {
+        return WebApiResponse.error(ex.getMsg(), ex.getCode());
     }
 }

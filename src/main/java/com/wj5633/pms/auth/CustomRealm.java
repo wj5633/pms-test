@@ -1,7 +1,6 @@
 package com.wj5633.pms.auth;
 
 import com.google.common.collect.Sets;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AccountException;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -21,7 +20,7 @@ import java.util.Set;
  * @author wj
  * @create 2018-09-20 9:36
  **/
-@Slf4j
+// @Slf4j
 public class CustomRealm extends AuthorizingRealm {
 
     protected boolean permissionsLookupEnabled = false;

@@ -1,10 +1,7 @@
 package com.wj5633.pms.listener;
 
-import lombok.extern.slf4j.Slf4j;
-
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
 
 /**
  * @author wj

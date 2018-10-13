@@ -2,7 +2,6 @@ package com.wj5633.pms.event;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
-import org.springframework.stereotype.Component;
 
 /**
  * @author wj

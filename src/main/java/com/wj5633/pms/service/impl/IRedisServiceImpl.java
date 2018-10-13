@@ -55,7 +55,7 @@ public class IRedisServiceImpl implements IRedisService {
     public Object get(final String key) {
         Object result = null;
         try {
-            ValueOperations operations = redisTemplate.opsForValue();
+            ValueOperations<String, String> operations = redisTemplate.opsForValue();
             result = operations.get(key);
         } catch (Exception e) {
             log.error("读取redis缓存失败！错误信息为：" + e.getMessage());

@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MyException extends RuntimeException {
+    private static final long serialVersionUID = -8353933508158842269L;
     private int code;
     private String msg;
 

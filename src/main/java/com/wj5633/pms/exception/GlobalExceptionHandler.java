@@ -15,7 +15,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(value = Exception.class)
     @ResponseBody
-    public WebApiResponse errorHandler(Exception ex) {
+    public WebApiResponse<Object> errorHandler(Exception ex) {
         return WebApiResponse.error(ex.getMessage());
     }
 
@@ -26,7 +26,7 @@ public class GlobalExceptionHandler {
      */
     @ResponseBody
     @ExceptionHandler(value = MyException.class)
-    public WebApiResponse myErrorHandler(MyException ex) {
+    public WebApiResponse<Object> myErrorHandler(MyException ex) {
         return WebApiResponse.error(ex.getMsg(), ex.getCode());
     }
 }

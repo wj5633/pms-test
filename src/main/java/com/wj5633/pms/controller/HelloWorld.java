@@ -3,6 +3,7 @@ package com.wj5633.pms.controller;
 import com.wj5633.pms.config.MyConfiguration;
 import com.wj5633.pms.config.TestConfiguration;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -58,9 +59,11 @@ public class HelloWorld {
         return test.toString();
     }
 
+    @RequiresRoles("admin")
     @ApiIgnore
     @GetMapping("/lucy")
     public String lucy() {
         return myConfiguration.toString();
     }
+
 }

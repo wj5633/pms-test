@@ -16,10 +16,6 @@ import java.util.Set;
 public class MyServletInitialzer implements ServletContainerInitializer {
     @Override
     public void onStartup(Set<Class<?>> set, ServletContext servletContext) throws ServletException {
-
-        System.out.println();
-        System.out.println();
-
-        System.out.println("My Servlet Initialzer" + servletContext.getContextPath());
+        log.info("My Servlet Initialzer" + servletContext.getContextPath());
     }
 }
